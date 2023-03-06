@@ -39,6 +39,8 @@ model Topic {
   updatedAt   DateTime? @updatedAt
   user        User      @relation(fields: [topicUserId], references: [userId], onDelete: Cascade)
   image       String   @default("https://images.pexels.com/photos/1571673/pexels-photo-1571673.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+  category    String    @default("common")
+  isElite    String    @default("true")
   topicUserId String
   country     String    @default("Worldwide")
   posts       Post[]
@@ -52,6 +54,8 @@ model Post {
   topic       Topic     @relation(fields: [postTopicId], references: [topicId], onDelete: Cascade)
   postTopicId String
   image       String   @default("https://images.pexels.com/photos/1809342/pexels-photo-1809342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+  category    String    @default("common")
+  isElite    String    @default("true")
   createdAt   DateTime? @default(now())
   updatedAt   DateTime? @updatedAt
   comments    Comment[]
@@ -65,6 +69,8 @@ model Comment {
   commentPostId String
   user          User      @relation(fields: [commentUserId], references: [userId], onDelete: Cascade)
   commentUserId String
+  category    String    @default("common")
+  isElite    String    @default("true")
   likes         Like[]
   createdAt     DateTime? @default(now())
   updatedAt     DateTime? @updatedAt
