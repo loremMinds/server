@@ -23,7 +23,9 @@ export interface IPost {
   text: string;
   postUserId: string;
   postTopicId: string;
-  image?: String;
+  image?: string;
+  category?: string;
+  isElite?: string;
 }
 
 export interface IComment {
@@ -31,6 +33,8 @@ export interface IComment {
   text: string;
   commentPostId: string;
   commentUserId: string;
+  category?: string;
+  isElite?: string;
 }
 
 export interface ILike {
@@ -58,6 +62,8 @@ export interface ITopic {
   topicUserId: string;
   image?: string;
   country: string;
+  category?: string;
+  isElite?: string;
 }
 
 export interface IReqAuth extends Request {
