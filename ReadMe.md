@@ -2,6 +2,8 @@
 
 Please follow the instructions..
 
+Don't forget to open your own branch and make pr to the develop branch...
+
 Install the  [Node](https://nodejs.dev/en/download/)
 
 ## Available Scripts
